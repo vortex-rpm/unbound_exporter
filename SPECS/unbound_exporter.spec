@@ -32,7 +32,7 @@ cd $GOPATH/%{_git_slug}
 export GOPATH=$(pwd)/_build
 cd $GOPATH/%{_git_slug}
 go get -v .
-got build -v unbound_exporter.go
+go build -v unbound_exporter.go
 strip %{name}
 
 %install
