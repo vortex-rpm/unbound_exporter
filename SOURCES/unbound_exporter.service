@@ -1,0 +1,13 @@
+[Unit]
+Description=Unbound Exporter for Prometheus
+Documentation=https://github.com/kumina/unbound_exporter
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/unbound_exporter
+User=prometheus
+ExecStart=/usr/bin/unbound_exporter $UNBOUND_EXPORTER_OPTS
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
